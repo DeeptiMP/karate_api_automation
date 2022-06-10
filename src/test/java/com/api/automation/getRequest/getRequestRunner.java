@@ -6,7 +6,7 @@ class getRequestRunner {
     
     @Karate.Test
     Karate testUsers() {
-        return Karate.run("validateJsonArray").relativeTo(getClass());
+        return Karate.run("getRequest.feature").relativeTo(getClass());
     }    
 
 }
