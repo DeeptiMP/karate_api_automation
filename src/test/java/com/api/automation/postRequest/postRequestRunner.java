@@ -6,7 +6,7 @@ class postRequestRunner {
     
     @Karate.Test
     Karate testUsers() {
-        return Karate.run("createJobEntry").relativeTo(getClass());
+        return Karate.run("dataDriven.feature").relativeTo(getClass());
     }    
 
 }
