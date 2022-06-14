@@ -6,7 +6,7 @@ class postRequestRunner {
     
     @Karate.Test
     Karate testUsers() {
-        return Karate.run("dataDriven.feature").relativeTo(getClass());
+        return Karate.run("javaScriptExecutor.feature").relativeTo(getClass());
     }    
 
 }

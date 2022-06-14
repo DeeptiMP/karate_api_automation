@@ -20,4 +20,4 @@ When method get
 Then status 200
 And print response
 And match response contains deep {"jobTitle": "Software Engg"}
-And match header Accept = 'application/json'
+And match header Content-Type == 'application/json'

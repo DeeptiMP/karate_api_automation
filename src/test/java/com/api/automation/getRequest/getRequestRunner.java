@@ -6,7 +6,7 @@ class getRequestRunner {
     
     @Karate.Test
     Karate testUsers() {
-        return Karate.run("getRequest.feature").relativeTo(getClass());
+        return Karate.run("getRequestWithQueryParameter.feature").relativeTo(getClass());
     }    
 
 }
