@@ -1,29 +1,20 @@
 package com.api.automation;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
-
+import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
 import com.intuit.karate.Results;
-import com.intuit.karate.Runner;
 import com.intuit.karate.Runner.Builder;
 
 public class ParallelRunner {
-//	 @Test
-//	    void testParallel() {
-//	        Results results = Runner.path("classpath:getRequest")
-//	                //.outputCucumberJson(true)
-//	                .parallel(1);
-//	        assertEquals(0, results.getFailCount(), results.getErrorMessages());
-//	    }
-	
 	@Test
-	public void executeKarateTests()
-	{
-		Builder builder = new Builder();
-		builder.path("classpath:com/api/automation/getRequest");
-		builder.parallel(1);
-		
-		
+	public void executeTest() {
+		Builder runner = new Builder();
+		runner.path("classpath:com/api/automation");
+		Results result = runner.parallel(5);
+		System.out.println("No of Scenarios : " + result.getScenariosTotal());
+		System.out.println("No of Scenarios PASSED: " + result.getScenariosPassed());
+		System.out.println("No of Scenarios FAILED: " + result.getScenariosFailed());
+		Assertions.assertEquals(0, result.getScenariosFailed());
 	}
 }
